@@ -1,0 +1,8 @@
+.idea/
+*.iml
+.project
+.settings/
+.classpath
+.factorypath
+target/
+nb-configuration.xml
