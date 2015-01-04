@@ -29,16 +29,6 @@ public class NQueensSolverIterative2 {
 
     private long count = 0;
     
-    private static class StackElement {
-        private final int col;
-        private final int row;
-
-        public StackElement(int col, int row) {
-            this.col = col;
-            this.row = row;
-        }
-    }
-    
     public NQueensSolverIterative2(int n) {
         this.n = n;
         int i;
