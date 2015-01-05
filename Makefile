@@ -39,17 +39,19 @@ perf-java-all:
 compile-c:
 	mkdir -p $(C_TARGET)
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens $(C_BASE)/nqueens.c
-	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens1 $(C_BASE)/nqueens1.c
-	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens2 $(C_BASE)/nqueens2.c
-	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens3 $(C_BASE)/nqueens3.c
-	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens4 $(C_BASE)/nqueens4.c
-	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens5 $(C_BASE)/nqueens5.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensR1 $(C_BASE)/nqueensR1.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI0 $(C_BASE)/nqueensI0.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI1 $(C_BASE)/nqueensI1.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI2 $(C_BASE)/nqueensI2.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI3 $(C_BASE)/nqueensI3.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI4 $(C_BASE)/nqueensI4.c
 
 perf-c-all:
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens $(QUEENS_N)
-	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens1 $(QUEENS_N)
-	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens2 $(QUEENS_N)
-	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens3 $(QUEENS_N)
-	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens4 $(QUEENS_N)
-	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens5 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensR1 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI0 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI1 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI2 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI3 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI4 $(QUEENS_N)
 	
