@@ -40,16 +40,19 @@ void tryMid(int i, int j);
 void tryMid(int i, int j) {
 	// Common subexpressions
 	int aBitMask = 1 << j;
-	long bBitMask = 1L << (i + j);
-	long cBitMask = 1L << (i - j + n);
-	if ((aInt & aBitMask) && (bLong & bBitMask) && (cLong & cBitMask)) {
-		aInt = aInt & ~aBitMask;
-		bLong = bLong & ~bBitMask;
-		cLong = cLong & ~cBitMask;
+	int bIndex = i + j;
+	int cIndex = i - j + n;
+	if ((aInt & aBitMask) && (bLong & (1L << (bIndex)))
+			&& (cLong & (1L << (cIndex)))) {
+		long bBitMask = 1L << (bIndex);
+		long cBitMask = 1L << (cIndex);
+		aInt &= ~aBitMask;
+		bLong &= ~bBitMask;
+		cLong &= ~cBitMask;
 		try1(i + 1, 1);
-		aInt = aInt | aBitMask;
-		bLong = bLong | bBitMask;
-		cLong = cLong | cBitMask;
+		aInt |= aBitMask;
+		bLong |= bBitMask;
+		cLong |= cBitMask;
 	}
 }
 
@@ -73,9 +76,10 @@ void try1(int i, int mirrorExit) {
 		bIndex++;
 		cIndex--;
 		int aBitMask = 1 << j;
-		long bBitMask = 1L << (bIndex);
-		long cBitMask = 1L << (cIndex);
-		if ((aInt & aBitMask) && (bLong & bBitMask) && (cLong & cBitMask)) {
+		if ((aInt & aBitMask) && (bLong & (1L << (bIndex)))
+				&& (cLong & (1L << (cIndex)))) {
+			long bBitMask = 1L << (bIndex);
+			long cBitMask = 1L << (cIndex);
 			aInt = aInt & ~aBitMask;
 			bLong = bLong & ~bBitMask;
 			cLong = cLong & ~cBitMask;
