@@ -26,8 +26,6 @@
 #define MAXN 100
 /* this is the actual board size to be used */
 int n;
-/* only used to init arrays, may instead use e.g. int a[MAXN+1] = {1}; */
-int idx;
 /* number of found solutions to the n-queens problem */
 long count = 0L;
 /* a[x] is true, if a queen can be placed in column x  (x: 1..n) */
@@ -91,14 +89,15 @@ int main(int argc, char *argv[]) {
 		n = 8;
 	}
 	// initialize all arrays, set all true
-	for (idx = 1; idx <= n; idx++) {
-		a[idx] = 1; // '|' column storage
+    int i = 1;
+	for (i = 1; i <= n; i++) {
+		a[i] = 1; // '|' column storage
 	}
-	for (idx = 2; idx <= (2 * n); idx++) {
-		b[idx] = 1; // '/' diagonal storage
+	for (i = 2; i <= (2 * n); i++) {
+		b[i] = 1; // '/' diagonal storage
 	}
-	for (idx = 1; idx <= ((2 * n) - 1); idx++) {
-		c[idx] = 1; // '\' diagonale storage
+	for (i = 1; i <= ((2 * n) - 1); i++) {
+		c[i] = 1; // '\' diagonale storage
 	}
 	try1(1); // start recursive backtracking algorithm at first row
 	printf("%ld\n", count); // print result (number of solutions found)
