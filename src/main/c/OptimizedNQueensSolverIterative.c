@@ -3,7 +3,6 @@
  * only clear queens from board if required
  * replace 'struct field f' (stack element) with simple integers
  * use char instead of integer in 'struct field' for stack elements
- * reverse ordering in both inner 'for' loops
  * Symmetrie checking along the vertical middle line
  * Use long number and bitmask as boolean array (n limited to 31 now)
  *
