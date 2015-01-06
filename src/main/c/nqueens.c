@@ -89,7 +89,7 @@ int main(int argc, char *argv[]) {
 		n = 8;
 	}
 	// initialize all arrays, set all true
-    int i = 1;
+	int i = 1;
 	for (i = 1; i <= n; i++) {
 		a[i] = 1; // '|' column storage
 	}
