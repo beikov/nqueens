@@ -40,18 +40,26 @@ compile-c:
 	mkdir -p $(C_TARGET)
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueens $(C_BASE)/nqueens.c
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensR1 $(C_BASE)/nqueensR1.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensR2 $(C_BASE)/nqueensR2.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensR3 $(C_BASE)/nqueensR3.c
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI0 $(C_BASE)/nqueensI0.c
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI1 $(C_BASE)/nqueensI1.c
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI2 $(C_BASE)/nqueensI2.c
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI3 $(C_BASE)/nqueensI3.c
 	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI4 $(C_BASE)/nqueensI4.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI5 $(C_BASE)/nqueensI5.c
+	$(GCC) $(GCC_FLAGS) -o $(C_TARGET)/nqueensI6 $(C_BASE)/nqueensI6.c
 
 perf-c-all:
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueens $(QUEENS_N)
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensR1 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensR2 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensR3 $(QUEENS_N)
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI0 $(QUEENS_N)
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI1 $(QUEENS_N)
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI2 $(QUEENS_N)
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI3 $(QUEENS_N)
 	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI4 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI5 $(QUEENS_N)
+	perf stat $(PERF_FLAGS) ./$(C_TARGET)/nqueensI6 $(QUEENS_N)
 	
