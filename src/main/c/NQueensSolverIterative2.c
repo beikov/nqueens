@@ -10,8 +10,6 @@
 #define MAXN 100
 /* this is the actual board size to be used */
 int n;
-/* only used to init arrays, may instead use e.g. int a[MAXN+1] = {1}; */
-int idx;
 /* number of found solutions to the n-queens problem */
 long count = 0L;
 /* a[x] is true, if a queen can be placed in column x  (x: 1..n) */
@@ -40,7 +38,7 @@ struct field {
 struct field stack[MAXN * MAXN];
 
 /* Pointer to next free entry on top of Stack. If 0, the stack is empty. */
-int last;
+int last = 0;
 
 /* The currently processed field. */
 struct field f;
