@@ -36,7 +36,7 @@ void try1(int i) {
         j++;
         bIndex++;
         cIndex--;
-		if (a[j] && b[i + j] && c[i - j + n]) {
+		if (a[j] && b[bIndex] && c[cIndex]) {
 			a[j] = 0;
 			b[bIndex] = 0;
 			c[cIndex] = 0;
